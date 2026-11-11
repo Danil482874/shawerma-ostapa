@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шавуха у Остапа 🌯</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-radius: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #764ba2;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tagline {
+            font-size: 1.2em;
+            color: #667eea;
+            font-style: italic;
+        }
+
+        .emoji-decoration {
+            font-size: 2em;
+            margin: 0 10px;
+        }
+
+        .admin-panel {
+            background: white;
+            padding: 25px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .admin-panel h2 {
+            color: #764ba2;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #764ba2;
+            box-shadow: 0 0 10px rgba(118, 75, 162, 0.3);
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .menu-section {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .menu-section h2 {
+            color: #764ba2;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 20px;
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .menu-item h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        .menu-item p {
+            color: #555;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .price {
+            font-size: 1.8em;
+            color: #667eea;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .delete-btn {
+            background: #e74c3c;
+            padding: 8px 15px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+
+        footer {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        footer h3 {
+            color: #764ba2;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .fun-facts {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+
+        .fun-facts h4 {
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .fun-facts ul {
+            list-style: none;
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .fun-facts li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .fun-facts li:before {
+            content: "🌯";
+            position: absolute;
+            left: 0;
+        }
+
+        .toggle-admin {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #764ba2;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5em;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <span class="emoji-decoration">🌯</span>
+                Шавуха у Остапа
+                <span class="emoji-decoration">🌯</span>
+            </h1>
+            <p class="tagline">Найсмачніша шаурма в місті! З любов'ю від Остапа 💜</p>
+        </header>
+
+        <div id="adminPanel" class="admin-panel hidden">
+            <h2>⚙️ Панель управління меню</h2>
+            <div class="form-group">
+                <label>Назва страви:</label>
+                <input type="text" id="itemName" placeholder="Наприклад: Шаурма Класична">
+            </div>
+            <div class="form-group">
+                <label>Опис:</label>
+                <input type="text" id="itemDesc" placeholder="Курка, овочі, соус...">
+            </div>
+            <div class="form-group">
+                <label>Ціна (грн):</label>
+                <input type="number" id="itemPrice" placeholder="120">
+            </div>
+            <button onclick="addMenuItem()">➕ Додати до меню</button>
+        </div>
+
+        <section class="menu-section">
+            <h2>📋 Наше Меню</h2>
+            <div id="menuGrid" class="menu-grid">
+                <!-- Меню буде тут -->
+            </div>
+        </section>
+
+        <footer>
+            <h3>📞 Зв'яжіться з нами</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span style="font-size: 1.5em;">📱</span>
+                    <span>+380 XX XXX XX XX</span>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5em;">✉️</span>
+                    <span>ostap.shawarma@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span style="font-size: 1.5em;">📍</span>
+                    <span>м. Київ, вул. Прикольна, 42</span>
+                </div>
+            </div>
+
+            <div class="fun-facts">
+                <h4>🎉 А ви знали?</h4>
+                <ul>
+                    <li>Остап готує шаурму вже 10 років!</li>
+                    <li>Наш секретний соус - це комбінація 7 спецій</li>
+                    <li>Ми використовуємо тільки свіжі овочі щодня</li>
+                    <li>Найбільша шаурма важила 2 кг! 😱</li>
+                    <li>У нас є таємне меню для постійних клієнтів 🤫</li>
+                    <li>Остап може загорнути шаурму за 23 секунди!</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 20px; color: #764ba2;">
+                © 2026 Шавуха у Остапа. Всі права захищені. Зроблено з ❤️ і лавашем
+            </p>
+        </footer>
+    </div>
+
+    <button class="toggle-admin" onclick="toggleAdmin()" title="Відкрити панель управління">⚙️</button>
+
+    <script>
+        // Початкове меню
+        let menuItems = [
+            {
+                name: "Шаурма Класична",
+                desc: "Курячі стегенця-гриль, свіжі овочі, айсберг, фірмовий соус Остапа",
+                price: 120
+            },
+            {
+                name: "Шаурма Мега",
+                desc: "Подвійна порція м'яса, сир фета, гострий соус, овочі",
+                price: 160
+            },
+            {
+                name: "Шаурма Вегі",
+                desc: "Фалафель, хумус, свіжі овочі, соус тахіні",
+                price: 100
+            },
+            {
+                name: "Шаурма Гостра",
+                desc: "Яловичина, гострий перець халапеньо, пекельний соус",
+                price: 140
+            },
+            {
+                name: "Картопля Фрі",
+                desc: "Хрустка золотиста картопля з фірмовим соусом",
+                price: 50
+            },
+            {
+                name: "Напій на вибір",
+                desc: "Кола, Фанта, Спрайт, Айран",
+                price: 30
+            }
+        ];
+
+        function renderMenu() {
+            const grid = document.getElementById('menuGrid');
+            grid.innerHTML = '';
+
+            menuItems.forEach((item, index) => {
+                const menuItem = document.createElement('div');
+                menuItem.className = 'menu-item';
+                menuItem.innerHTML = `
+                    <h3>${item.name}</h3>
+                    <p>${item.desc}</p>
+                    <div class="price">${item.price} грн</div>
+                    <button class="delete-btn" onclick="deleteMenuItem(${index})">🗑️ Видалити</button>
+                `;
+                grid.appendChild(menuItem);
+            });
+
+            // Зберігаємо в localStorage
+            localStorage.setItem('shawarmaMenu', JSON.stringify(menuItems));
+        }
+
+        function addMenuItem() {
+            const name = document.getElementById('itemName').value;
+            const desc = document.getElementById('itemDesc').value;
+            const price = document.getElementById('itemPrice').value;
+
+            if (name && desc && price) {
+                menuItems.push({ name, desc, price: parseInt(price) });
+                renderMenu();
+
+                // Очищаємо форму
+                document.getElementById('itemName').value = '';
+                document.getElementById('itemDesc').value = '';
+                document.getElementById('itemPrice').value = '';
+            } else {
+                alert('Заповніть всі поля! 😊');
+            }
+        }
+
+        function deleteMenuItem(index) {
+            if (confirm('Точно видалити цю страву?')) {
+                menuItems.splice(index, 1);
+                renderMenu();
+            }
+        }
+
+        function toggleAdmin() {
+            const panel = document.getElementById('adminPanel');
+            panel.classList.toggle('hidden');
+        }
+
+        // Завантажуємо збережене меню при старті
+        window.onload = function() {
+            const saved = localStorage.getItem('shawarmaMenu');
+            if (saved) {
+                menuItems = JSON.parse(saved);
+            }
+            renderMenu();
+        };
+    </script>
+</body>
+</html>
